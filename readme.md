@@ -10,13 +10,12 @@ Neste desafio, foi desenvolvido uma agenda que permite salvar, editar, deletar e
 # Funcionalidades da Aplicação
 A aplicação possui as seguintes funcionalidades:
 
-# Adicionar um contato: Permite adicionar um novo contato com os seguintes dados:
-
-- Nome
-- Telefone
-- Email
-- Favorito (opção para marcar o contato como favorito)
-- Visualizar contatos: Exibe a lista de contatos cadastrados.
+- Adicionar um contato: Permite adicionar um novo contato com os seguintes dados:
+    Nome
+    Telefone
+    Email
+    Favorito (opção para marcar o contato como favorito)
+    Visualizar contatos: Exibe a lista de contatos cadastrados.
 
 - Editar um contato: Permite editar as informações de um contato existente.
 
