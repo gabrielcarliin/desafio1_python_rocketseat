@@ -79,6 +79,7 @@ def ver_contatos_favoritos(lista_contato):
     return
 
 
+# Função utilizada para remover contato dos favoritos utilizando seu índice como parâmetro 
 def desfavoritar_contato(lista_contato, indice_contato):
     indice_contato_ajustado = int(indice_contato) - 1
     if indice_contato_ajustado >= 0 and indice_contato_ajustado < len(lista_contato):
