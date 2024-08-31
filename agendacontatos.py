@@ -63,23 +63,26 @@ def favoritar_contato(lista_contato, indice_contato):
     return
 
 
+# Função utilizada para visualizar lista de contatos favoritados
 def ver_contatos_favoritos(lista_contato):
     print("\n" + "="*30)
     print(f"{'CONTATOS FAVORITOS':^30}")
     print("="*30)
-    for indice, contatos in enumerate(lista_contato, start=1):
-        favorito = '★' if contatos["favorito"] else ""
-        nome_contato = contatos["nome"]
-        telefone = contatos["telefone"]
-        email = contatos["email"]
-        print(f"{indice}. {favorito} {nome_contato}")
-        print(f"    Telefone: {telefone}")
-        print(f"    E-mail  : {email}")
-        print("-" * 30)
+    encontrou_favoritos = False
+    for indice, contato in enumerate(lista_contato, start=1):
+        if contato["favorito"]:  # Verifica se o contato é favorito
+            encontrou_favoritos = True
+            nome_contato = contato["nome"]
+            telefone = contato["telefone"]
+            email = contato["email"]
+            print(f"{indice}. ★ {nome_contato}")
+            print(f"    Telefone: {telefone}")
+            print(f"    E-mail  : {email}")
+            print("-" * 30)
     return
 
 
-# Função utilizada para remover contato dos favoritos utilizando seu índice como parâmetro 
+# Função utilizada para remover contato dos favoritos utilizando seu índice como parâmetro
 def desfavoritar_contato(lista_contato, indice_contato):
     indice_contato_ajustado = int(indice_contato) - 1
     if indice_contato_ajustado >= 0 and indice_contato_ajustado < len(lista_contato):
@@ -127,6 +130,8 @@ while True:
         ver_contatos(lista_contato)
         indice_contato = int(input("Digite o número do contato que desejada favoritar: "))
         favoritar_contato(lista_contato, indice_contato)
+    elif opcao == 6:
+        ver_contatos_favoritos(lista_contato)
     elif opcao == 7:
         ver_contatos(lista_contato)
         indice_contato = int(input("Digite o número do contato que desejada remover dos favoritos: "))
