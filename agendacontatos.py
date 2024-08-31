@@ -79,6 +79,16 @@ def ver_contatos_favoritos(lista_contato):
     return
 
 
+def desfavoritar_contato(lista_contato, indice_contato):
+    indice_contato_ajustado = int(indice_contato) - 1
+    if indice_contato_ajustado >= 0 and indice_contato_ajustado < len(lista_contato):
+        lista_contato[indice_contato_ajustado]["favorito"] = False
+        print("Contato exclu[ido dos favoritos!")
+    else:
+        print("Índice de contato incorreto!")
+    return
+
+
 lista_contato = []
 while True:
     print("\n" + "="*50)
@@ -116,5 +126,9 @@ while True:
         ver_contatos(lista_contato)
         indice_contato = int(input("Digite o número do contato que desejada favoritar: "))
         favoritar_contato(lista_contato, indice_contato)
+    elif opcao == 7:
+        ver_contatos(lista_contato)
+        indice_contato = int(input("Digite o número do contato que desejada remover dos favoritos: "))
+        desfavoritar_contato(lista_contato, indice_contato)
     elif opcao == 0:
         break
